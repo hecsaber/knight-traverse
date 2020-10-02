@@ -10,6 +10,7 @@ end
 
 class Knight
   attr_reader :rows, :columns
+  POSSIBLE_MOVES = 8
 
   def initialize
     @rows = [-2, -1, 1, 2, -2, -1, 1, 2]
@@ -28,7 +29,7 @@ class Knight
       solution = first
       return show_steps(solution) if first.row == finish.row && first.column == finish.column
       
-      8.times do |i|
+      POSSIBLE_MOVES.times do |i|
         next_row = first.row + rows[i]
         next_column = first.column + columns[i]
         visit = [next_row, next_column]
