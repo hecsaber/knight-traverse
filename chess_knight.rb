@@ -43,6 +43,8 @@ class Knight
     return nil
   end
 
+  private 
+
   def legal_move?(row, column)
     return row >= 0 && column >= 0 && row < 8 && column < 8
   end
